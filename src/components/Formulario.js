@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Error from './Error'
 
-const Formulario = () => {
+const Formulario = ({ setBusqueda }) => {
     const [termino, setTermino] = useState('');
     const [error, setError] = useState(false);
 
@@ -13,6 +13,8 @@ const Formulario = () => {
             return;
         }
         setError(false);
+        //enviar el termino de busqueda hacia app.js
+        setBusqueda(termino);
     }
     return (
         <form onSubmit={buscarImagenes}>
